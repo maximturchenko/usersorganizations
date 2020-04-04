@@ -12,7 +12,31 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+ 
+Route::get('/', 'UserController@index');
+ 
+Route::get('user/add', 'UserController@create');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::post('users', 'UserController@store');
+
+
+Route::get('user/{user}', 'UserController@show');
+
+Route::get('user/{user}/edit', 'UserController@edit');
+
+Route::get('user/{user}/delete', 'UserController@delete');
+
+
+Route::patch('user/{user}', 'UserController@update');
+
+Route::delete('/user/{user}', "UserController@destroy");
+ 
+/*
+    GET /users
+    GET /users/create
+    POST /users
+    GET /users/{id}/edit
+    PATCH /users/{id}
+    DELETE /users/{id}
+
+*/
