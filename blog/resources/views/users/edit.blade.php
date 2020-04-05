@@ -6,7 +6,7 @@
     <h2>Редактирование пользователя </h2>
     <form action="/user/{{$user->id_user}}" method="POST">
          {{csrf_field()}}
-         @method('PATCH')
+         @method('PUT')
         @include('layouts.errors')
         <div class="form-group">
             <label for="lastname">Фамилия</label>
